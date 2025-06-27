@@ -116,6 +116,8 @@ int main() {
 
 ## Expected Output
 
+![image](https://github.com/user-attachments/assets/c6fdfbd8-6f09-4c12-9961-b59ba4181af6)
+
 ```
 Element 5 found at index 2
 ```
