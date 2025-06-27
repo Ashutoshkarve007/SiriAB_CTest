@@ -116,7 +116,8 @@ int main() {
 
 ## Expected Output
 
-![image](https://github.com/user-attachments/assets/c6fdfbd8-6f09-4c12-9961-b59ba4181af6)
+![image](https://github.com/user-attachments/assets/ffb32d70-1f87-4d74-9fb5-e19435592282)
+
 
 ```
 Element 5 found at index 2
@@ -243,7 +244,8 @@ int main(void) {
 
 ## Expected Output
 
-![image](https://github.com/user-attachments/assets/0c58d8e4-66a5-48d7-98ba-3e3ee7517c1e)
+![image](https://github.com/user-attachments/assets/61464586-d7c8-4008-a24c-f1360a1e66bb)
+
 
 ```
 Expected 2, got 2
