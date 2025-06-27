@@ -1,4 +1,4 @@
-# 1 Bug fixing Bisection
+# 1 Bug fixing Bisection (Inside C_Test_Bisection Folder)
 
 ## Overview
 
@@ -102,7 +102,9 @@ int main() {
 ## Build and Run Instructions (Windows / VSCode)
 
 1. Install **Visual Studio Code** and **MinGW-w64** (to get `gcc`).
-2. Open the folder containing `bisection_fix.c` in VSCode.
+
+2. Open the `C_Test_Bisection` folder (containing `bisection_fix.c`) in VSCode.
+
 3. In the integrated terminal, compile:
    ```bash
    gcc bisection_fix.c -o bisection_fix
