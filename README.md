@@ -256,5 +256,119 @@ Expected 4, got 4
 - **Time:** O(N log N)  
 - **Space:** O(1) (ignoring input array)
 
+# 3. Divisible By Three (Inside C_Divisible_By_Three Folder/Dir):
 
+## Overview
+
+Given a string `S` of `N` digits representing a number, you may change **at most one** digit to any other digit (0–9). Compute how many **distinct** numbers divisible by 3 can be obtained in this way, including the original number if it is already divisible by 3.
+
+The solution code resides in the `C_Divisible_By_Three` folder, file `divisible_by_three.c`.
+
+## Problem Statement
+
+Implement the function:
+
+```c
+int solution(char *S);
+```
+
+- **Input:**  
+  - `S`: a null-terminated string of length `N` (1 ≤ N ≤ 100,000) consisting of digits '0'–'9'.  
+- **Output:**  
+  - Number of distinct numbers divisible by 3 obtainable by changing at most one digit.
+
+### Examples
+
+1. **S = "23"** → **7**  
+   Possible results: `"03"`, `"21"`, `"24"`, `"27"`, `"33"`, `"63"`, `"93"`.
+
+2. **S = "0081"** → **11**  
+   Possible results include `"0021"`, `"0051"`, `"0081"`, `"0084"`, `"0087"`, `"0381"`, `"0681"`, `"0981"`, `"3081"`, `"6081"`, `"9081"`.
+
+3. **S = "022"** → **9**  
+   Possible results include `"012"`, `"021"`, `"024"`, `"027"`, `"042"`, `"072"`, `"222"`, `"522"`, `"822"`.
+
+## Solution Approach
+
+1. Compute the **sum** of digits of `S`.
+2. Determine the **remainder** `orig_mod = sum % 3`.  
+3. Initialize `count` to `1` if `orig_mod == 0`, else `0`.
+4. For each position `i` in `S`:
+   - Let `d` be the original digit at `i`.
+   - Compute `base = sum - d`.
+   - For each replacement digit `nd` in `0…9` (excluding `d`):
+     - If `(base + nd) % 3 == 0`, increment `count`.
+5. Return `count`.
+
+This runs in O(N × 10) time, i.e. O(N).
+
+## Code
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+/* Returns count of distinct numbers divisible by 3
+   obtainable by changing at most one digit in S. */
+int solution(char *S) {
+    int N = strlen(S), sum = 0;
+    for (int i = 0; i < N; i++) {
+        sum += S[i] - '0';
+    }
+    int orig_mod = sum % 3;
+    int count = (orig_mod == 0) ? 1 : 0;
+
+    for (int i = 0; i < N; i++) {
+        int d = S[i] - '0';
+        int base = sum - d;
+        for (int nd = 0; nd <= 9; nd++) {
+            if (nd == d) continue;
+            if ((base + nd) % 3 == 0) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+int main(void) {
+    char S1[] = "23";
+    printf("Expected 7, got %d
+", solution(S1));
+    char S2[] = "0081";
+    printf("Expected 11, got %d
+", solution(S2));
+    char S3[] = "022";
+    printf("Expected 9, got %d
+", solution(S3));
+    return 0;
+}
+```
+
+## Build and Run (Windows / VSCode)
+
+1. Place the code in `C_Divisible_By_Three/divisible_by_three.c`.
+2. Open the `C_Divisible_By_Three` folder in VS Code.
+3. Open the integrated terminal.
+4. Compile:
+   ```bash
+   gcc divisible_by_three.c -o divisible_by_three
+   ```
+5. Run:
+   ```bash
+   ./divisible_by_three   # or divisible_by_three.exe on Windows
+   ```
+
+## Expected Output
+
+```
+Expected 7, got 7
+Expected 11, got 11
+Expected 9, got 9
+```
+
+## Complexity
+
+- **Time:** O(N)  
+- **Space:** O(1)
 
