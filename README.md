@@ -363,6 +363,9 @@ int main(void) {
 
 ## Expected Output
 
+![image](https://github.com/user-attachments/assets/d7118f73-ff1b-4b7c-ab4a-537e1474a708)
+
+
 ```
 Expected 7, got 7
 Expected 11, got 11
