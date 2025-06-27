@@ -1,3 +1,32 @@
+## About Me
+
+I’m Ashutosh Karve, a firmware engineer with over four years of hands-on experience designing and debugging embedded systems. I’ve worked extensively in C and C++, building Linux device drivers and real-time RTOS applications for STM32 and ESP32 platforms. My day-to-day involves OpenBMC development, Yocto custom layers, FreeRTOS kernel tuning, and Python scripting to automate build and test workflows. I’m comfortable with the full stack—from low-level bootloader tweaks to user-space daemon integrations—and I thrive on solving tricky edge cases and optimizing for performance and reliability.
+
+Below, you’ll find my solutions to three coding challenges:
+1. Bug Fixing Bisection  
+2. Creating the Longest Spike  
+3. Counting Numbers Divisible by Three with One Digit Change  
+
+# Repository Layout
+
+This repository contains three independent C programs, each in its own folder:
+
+```
+/
+├── C_Test_Bisection
+│   └── bisection_fix.c         # Bug-fixed binary search
+│
+├── C_Longest_Spike
+│   └── longest_spike.c         # Longest “spike” sequence builder
+│
+├── C_Divisible_By_Three
+│   └── divisible_by_three.c    # Count numbers divisible by 3 after one digit change
+│
+└── README.md                   # This consolidated guide
+```
+
+---
+
 # 1. Bug fixing Bisection (Inside C_Test_Bisection Folder/Dir):
 
 ## Overview
